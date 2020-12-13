@@ -1,0 +1,9 @@
+/* make the customizations */
+$theme-colors: (
+      "primary": #293880
+);
+
+$navbar-padding-x: 2rem;
+
+/* import bootstrap to set changes */
+@import "../node_modules/bootstrap/scss/bootstrap";

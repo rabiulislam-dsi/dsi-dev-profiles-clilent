@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Importing Sass with Bootstrap CSS
+import './App.scss';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

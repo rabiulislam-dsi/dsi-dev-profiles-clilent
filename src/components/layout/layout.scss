@@ -1,0 +1,46 @@
+@import "src/Custom";
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  position: fixed;
+  z-index: 10;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  margin-top: 66px;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+  background-color: map-get($theme-colors, "secondary");
+  color: map-get($colors, "white");
+}
+
+#sidebar-wrapper .list-group-item.active {
+  text-decoration: none;
+  background-color: map-get($theme-colors, "primary");
+  color: map-get($colors, "white");
+}
+
+#sidebar-wrapper .list-group-item {
+  border-bottom: none;
+  background-color: inherit;
+}
+
+#NavWrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.sidebar-icon {
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 992px) {
+  #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
