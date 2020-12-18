@@ -4,6 +4,8 @@ import CounterCard from "../utils/CounterCard";
 import {FaUserTie, FaGithub, FaStar, FaBuilding} from "react-icons/fa";
 import WordCloudCard from "../utils/WordCloudCard";
 import PieContributionCard from "../utils/PieContributionCard";
+import ContributorCard from "../utils/ContributorCard";
+import RepositoriesCard from "../utils/RepositoriesCard";
 
 
 const StatData = [
@@ -28,7 +30,7 @@ const StatData = [
         icon: <FaBuilding size="3em"/>
     }
 ];
-const WordCloudData = [
+const TopLanguageData = [
     {
         text: 'JAVA',
         value: 64,
@@ -138,6 +140,116 @@ const WordCloudData = [
         value: 11,
     }
 ];
+const TopTopicsData = [
+    {
+        text: 'Game',
+        value: 64,
+    },
+    {
+        text: 'Socket Programming',
+        value: 11,
+    },
+    {
+        text: 'Chat Application',
+        value: 16,
+    },
+    {
+        text: 'Unity',
+        value: 17,
+    },
+    {
+        text: 'Machine Learning',
+        value: 10,
+    },
+    {
+        text: 'Neural Network',
+        value: 54,
+    },
+    {
+        text: 'Deep Learning',
+        value: 12,
+    },
+    {
+        text: 'Spring Boot',
+        value: 77,
+    },
+    {
+        text: 'Angular',
+        value: 45,
+    },
+    {
+        text: 'Spring MVC',
+        value: 19,
+    },
+    {
+        text: 'VueJS',
+        value: 13,
+    },
+    {
+        text: '.Net Framework',
+        value: 32,
+    },
+    {
+        text: 'Docker',
+        value: 22,
+    },
+    {
+        text: 'AWS',
+        value: 35,
+    },
+    {
+        text: 'Azure',
+        value: 24,
+    },
+    {
+        text: 'Numpy',
+        value: 38,
+    },
+    {
+        text: 'Scikit Learn',
+        value: 70,
+    },
+    {
+        text: 'OpenCV',
+        value: 26,
+    },
+    {
+        text: 'JavaFX',
+        value: 14,
+    },
+    {
+        text: 'Swing',
+        value: 29,
+    },
+    {
+        text: 'Oauth',
+        value: 41,
+    },
+    {
+        text: 'HapiJS',
+        value: 49,
+    },
+    {
+        text: 'Laravel',
+        value: 20,
+    },
+    {
+        text: 'ReactJS',
+        value: 59,
+    },
+    {
+        text: 'Tkinter',
+        value: 49,
+    },
+    {
+        text: 'Android App',
+        value: 45,
+    },
+    {
+        text: 'PWA',
+        value: 11,
+    }
+];
 const PieChartData = {
     total: 8000,
     chartData: [
@@ -162,6 +274,146 @@ const PieChartData = {
             "color": "#d62728"
         }
     ]
+};
+const ContributorCardData = [
+    {
+        title: "Top Commit Contributors",
+        columns: ["#", "Name", "Github", "Commits"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            }
+        ]
+    },
+    {
+        title: "Top Pull Request Contributors",
+        columns: ["#", "Name", "Github", "Pull Requests"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            }
+        ]
+    },
+    {
+        title: "Top Issue Contributors",
+        columns: ["#", "Name", "Github", "Issues"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            }
+        ]
+    },
+    {
+        title: "Top Repository Contributors",
+        columns: ["#", "Name", "Github", "Repositories"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                url: "https://github.com/Death-Gear",
+                count: 150
+            }
+        ]
+    }
+];
+const RepositoryCardData = {
+    title: "Top Repositories",
+    columns: ["#", "Name", "Stars", "Forks", "Contributors"],
+    rows: [
+        {
+            name: "flask-image-search",
+            url: "https://github.com/Death-Gear/flask-image-search",
+            stars: 10,
+            forks: 6,
+            contributors: 20
+        },
+        {
+            name: "flask-image-search",
+            url: "https://github.com/Death-Gear/flask-image-search",
+            stars: 10,
+            forks: 6,
+            contributors: 20
+        },
+        {
+            name: "flask-image-search",
+            url: "https://github.com/Death-Gear/flask-image-search",
+            stars: 10,
+            forks: 6,
+            contributors: 20
+        },
+        {
+            name: "flask-image-search",
+            url: "https://github.com/Death-Gear/flask-image-search",
+            stars: 10,
+            forks: 6,
+            contributors: 20
+        },
+        {
+            name: "flask-image-search",
+            url: "https://github.com/Death-Gear/flask-image-search",
+            stars: 10,
+            forks: 6,
+            contributors: 20
+        }
+    ]
+
 }
 
 
@@ -180,8 +432,16 @@ function Home() {
                 }
             </Row>
             <Row>
+                <Col xl={6} className="mb-4">
+                    <WordCloudCard wordCloudData={TopLanguageData} title={'Top Languages'} />
+                </Col>
+                <Col xl={6} className="mb-4">
+                    <WordCloudCard wordCloudData={TopTopicsData} title={'Top Technologies'} />
+                </Col>
+            </Row>
+            <Row>
                 <Col xl={7} className="mb-4">
-                    <WordCloudCard wordCloudData={WordCloudData} title={'Top Languages'} />
+                    <RepositoriesCard repositoryCardData={RepositoryCardData} />
                 </Col>
                 <Col xl={5} className="mb-4">
                     <PieContributionCard
@@ -191,6 +451,16 @@ function Home() {
                     />
                 </Col>
             </Row>
+            <Row>
+                {ContributorCardData.map((item, index) => {
+                    return (
+                        <Col key={index} xl={6} className="mb-4">
+                            <ContributorCard contributorCardData={item}/>
+                        </Col>
+                    )
+                })}
+            </Row>
+
         </>
     );
 }
