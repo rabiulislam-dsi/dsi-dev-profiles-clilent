@@ -6,7 +6,7 @@ import logo from "../../images/dsi_logo.png"
 function NavBar(props) {
     return (
         <Navbar bg="light" variant="light" className="shadow" fixed="top">
-            <div onClick={props.toggleSideBar} className="text-primary d-block d-lg-none">
+            <div onClick={props.toggleSideBar} className="text-brand d-block d-lg-none">
                 <AiOutlineMenu size="1.5em"/>
             </div>
             <Navbar.Brand href="#" id="logo">

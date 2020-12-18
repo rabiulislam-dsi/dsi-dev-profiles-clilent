@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 
-import "./layout.scss";
+import "./Layout.scss";
 
 function NavWrapper() {
     const [sidebar, setSidebar] = useState(false);
