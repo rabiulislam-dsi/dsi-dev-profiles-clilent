@@ -1,12 +1,5 @@
+import {FaBuilding, FaGithub, FaStar, FaUserTie} from "react-icons/fa";
 import React from "react";
-import {Col, Row} from "react-bootstrap";
-import CounterCard from "../utils/CounterCard";
-import {FaUserTie, FaGithub, FaStar, FaBuilding} from "react-icons/fa";
-import WordCloudCard from "../utils/WordCloudCard";
-import PieContributionCard from "../utils/PieContributionCard";
-import ContributorCard from "../utils/ContributorCard";
-import RepositoriesCard from "../utils/RepositoriesCard";
-
 
 const StatData = [
     {
@@ -414,56 +407,15 @@ const RepositoryCardData = {
         }
     ]
 
+};
+
+const HomeData = {
+    StatData: StatData,
+    TopLanguageData: TopLanguageData,
+    TopTopicsData: TopTopicsData,
+    PieChartData: PieChartData,
+    ContributorCardData: ContributorCardData,
+    RepositoryCardData: RepositoryCardData
 }
 
-
-function Home() {
-    return (
-        <>
-            <Row className="mt-3">
-                {
-                    StatData.map((item, index) => {
-                        return (
-                            <Col key={index} xl={3} md={6} className="mb-4">
-                                <CounterCard data={item} />
-                            </Col>
-                        )
-                    })
-                }
-            </Row>
-            <Row>
-                <Col xl={6} className="mb-4">
-                    <WordCloudCard wordCloudData={TopLanguageData} title={'Top Languages'} />
-                </Col>
-                <Col xl={6} className="mb-4">
-                    <WordCloudCard wordCloudData={TopTopicsData} title={'Top Technologies'} />
-                </Col>
-            </Row>
-            <Row>
-                <Col xl={7} className="mb-4">
-                    <RepositoriesCard repositoryCardData={RepositoryCardData} />
-                </Col>
-                <Col xl={5} className="mb-4">
-                    <PieContributionCard
-                        pieChartData={PieChartData.chartData}
-                        title={'Contributions'}
-                        total={PieChartData.total}
-                    />
-                </Col>
-            </Row>
-            <Row>
-                {ContributorCardData.map((item, index) => {
-                    return (
-                        <Col key={index} xl={6} className="mb-4">
-                            <ContributorCard contributorCardData={item}/>
-                        </Col>
-                    )
-                })}
-            </Row>
-
-        </>
-    );
-}
-
-export default Home;
-  
+export default HomeData;

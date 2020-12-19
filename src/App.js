@@ -1,12 +1,12 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
-import Home from './components/pages/Home';
-import AuthRedirect from './components/pages/AuthRedirect';
-import NavWrapper from "./components/layout/NavWrapper";
-import Contributors from "./components/pages/Contributors";
-import Repositories from "./components/pages/Repositories";
-import Contributions from "./components/pages/Contributions";
-import Settings from "./components/pages/Settings";
+import Home from './pages/Home';
+import AuthRedirect from './pages/AuthRedirect';
+import NavWrapper from "./layout/NavWrapper";
+import Contributors from "./pages/Contributors";
+import Repositories from "./pages/Repositories";
+import Contributions from "./pages/Contributions";
+import Settings from "./pages/Settings";
 
 import Container from "react-bootstrap/cjs/Container";
 
