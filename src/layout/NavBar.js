@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/cjs/Navbar";
 import {AiOutlineMenu} from "react-icons/ai"
-import logo from "../../images/dsi_logo.png"
+import logo from "../images/dsi_logo.png"
 
 function NavBar(props) {
     return (
