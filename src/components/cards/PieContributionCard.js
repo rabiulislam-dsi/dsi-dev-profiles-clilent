@@ -55,7 +55,7 @@ function PieContributionCard({pieChartData, title, total}) {
     }
     return (
         <Card className="shadow py-2 border-0">
-            <Card.Body>
+            <Card.Body className="pb-0">
                 <Card.Title className="text-secondary text-center">
                     <h2>
                         {title}
@@ -68,7 +68,7 @@ function PieContributionCard({pieChartData, title, total}) {
                 </Card.Subtitle>
             </Card.Body>
             <div className="pie-card-content" style={{overflowX: "auto"}}>
-                    <ResponsiveContainer width="100%" minWidth={500} height={300}>
+                    <ResponsiveContainer width="100%" minWidth={500} height={350}>
                         <PieChart>
                             <Pie
                                 activeIndex={activeIndex}
@@ -86,7 +86,7 @@ function PieContributionCard({pieChartData, title, total}) {
                                     ))
                                 }
                             </Pie>
-                            <Legend verticalAlign="bottom"/>
+                            <Legend verticalAlign="bottom" iconType="circle"/>
                         </PieChart>
                     </ResponsiveContainer>
                 </div>

@@ -1,10 +1,10 @@
 import Cookies from 'js-cookie';
 import axios from 'axios'
 
-function GetToken() {
+function GetToken(callback) {
     const token = Cookies.get('token');
     if(token !== undefined) {
-        return token;
+        callback(token);
     } else {
         axios({
             method: 'post',
@@ -19,7 +19,7 @@ function GetToken() {
                     expires: new Date(response.data.expiresAt),
                     sameSite: 'strict'
                 });
-                return response.data.token;
+                callback(response.data.token);
             })
             .catch(error => {
                 console.error(error);

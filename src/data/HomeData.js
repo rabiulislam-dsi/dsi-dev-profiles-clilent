@@ -243,8 +243,8 @@ const TopTopicsData = [
         value: 11,
     }
 ];
-const PieChartData = {
-    total: 8000,
+const PieContributionData = {
+    total: 10000,
     chartData: [
         {
             "name": "Pull Requests",
@@ -265,6 +265,11 @@ const PieChartData = {
             "name": "Repositories",
             "value": 500,
             "color": "#d62728"
+        },
+        {
+            "name": "PR Review",
+            "value": 1135,
+            "color": "#9467bd"
         }
     ]
 };
@@ -413,7 +418,7 @@ const HomeData = {
     StatData: StatData,
     TopLanguageData: TopLanguageData,
     TopTopicsData: TopTopicsData,
-    PieChartData: PieChartData,
+    PieContributionData: PieContributionData,
     ContributorCardData: ContributorCardData,
     RepositoryCardData: RepositoryCardData
 }
