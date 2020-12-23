@@ -40,7 +40,7 @@ function Home() {
                             </Card.Header>
                             <Card.Body>
                                 <Row>
-                                    {homeData.ContributorTableData.map((item, index) => {
+                                    {homeData.ContributorCardData.map((item, index) => {
                                         return (
                                             <Col key={index} lg={4} md={6} className="my-3">
                                                 <ContributorTable contributorCardData={item}/>

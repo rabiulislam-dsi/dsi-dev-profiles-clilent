@@ -9,6 +9,7 @@ function GetToken(callback) {
         axios({
             method: 'post',
             url: '/api/token',
+            headers: {'Access-Control-Allow-Origin': '*'},
             auth: {
                 username: process.env.REACT_APP_BACKEND_CLIENT_ID,
                 password: process.env.REACT_APP_BACKEND_CLIENT_SECRET
