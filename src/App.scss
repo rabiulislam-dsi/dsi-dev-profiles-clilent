@@ -43,7 +43,7 @@
   overflow-x: hidden;
 }
 
-#page-content-wrapper {
+.page-content-wrapper {
   margin-top: 67px;
   margin-left: 15rem;
   -webkit-transition: margin .25s ease-out;
@@ -53,9 +53,16 @@
   width: calc(100% - 15rem);
   overflow-y: hidden;
 }
+.page-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
 
 @media (max-width: 992px) {
-  #page-content-wrapper {
+  .page-content-wrapper {
     margin-left: 0;
     width: 100%;
   }
