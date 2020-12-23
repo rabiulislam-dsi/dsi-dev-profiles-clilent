@@ -7,42 +7,42 @@ function ContributorTableData(summary) {
     const topProfilesByStars = [];
     summary.topProfilesByCommits.forEach(item => {
         topProfilesByCommits.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalCommitContributionsWeekly
         })
     });
     summary.topProfilesByPullRequests.forEach(item => {
         topProfilesByPullRequests.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalPullRequestContributionsWeekly
         })
     });
     summary.topProfilesByIssues.forEach(item => {
         topProfilesByIssues.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalIssueContributionsWeekly
         })
     });
     summary.topProfilesByRepositories.forEach(item => {
         topProfilesByRepositories.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalRepositories
         })
     });
     summary.topProfilesByRepositoryCreation.forEach(item => {
         topProfilesByRepositoryCreation.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalRepositoryContributionsWeekly
         })
     });
     summary.topProfilesByStars.forEach(item => {
         topProfilesByStars.push({
-            name: item.fullName,
+            name: item.name,
             login: item.githubLogin,
             count: item.totalIssueContributionsWeekly
         })
