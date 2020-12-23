@@ -1,6 +1,6 @@
 function RepositoryTableData(topRepositories) {
     const topRepositoryData = [];
-    topRepositories.map(item => {
+    topRepositories.forEach(item => {
         topRepositoryData.push({
             name: item.name,
             url: item.url,

@@ -273,7 +273,7 @@ const PieContributionData = {
         }
     ]
 };
-const ContributorCardData = [
+const ContributorTableData = [
     {
         title: "By Commits",
         columns: ["#", "Name", "Commits"],
@@ -444,7 +444,7 @@ const HomeData = {
     TopLanguageData: TopLanguageData,
     TopTopicsData: TopTopicsData,
     PieContributionData: PieContributionData,
-    ContributorCardData: ContributorCardData,
+    ContributorTableData: ContributorTableData,
     RepositoryCardData: RepositoryCardData
 }
 

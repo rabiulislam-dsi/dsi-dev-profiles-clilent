@@ -5,42 +5,42 @@ function ContributorTableData(summary) {
     const topProfilesByRepositories = [];
     const topProfilesByRepositoryCreation = [];
     const topProfilesByStars = [];
-    summary.topProfilesByCommits.map(item => {
+    summary.topProfilesByCommits.forEach(item => {
         topProfilesByCommits.push({
             name: item.fullName,
             login: item.githubLogin,
             count: item.totalCommitContributionsWeekly
         })
     });
-    summary.topProfilesByPullRequests.map(item => {
+    summary.topProfilesByPullRequests.forEach(item => {
         topProfilesByPullRequests.push({
             name: item.fullName,
             login: item.githubLogin,
             count: item.totalPullRequestContributionsWeekly
         })
     });
-    summary.topProfilesByIssues.map(item => {
+    summary.topProfilesByIssues.forEach(item => {
         topProfilesByIssues.push({
             name: item.fullName,
             login: item.githubLogin,
             count: item.totalIssueContributionsWeekly
         })
     });
-    summary.topProfilesByRepositories.map(item => {
+    summary.topProfilesByRepositories.forEach(item => {
         topProfilesByRepositories.push({
             name: item.fullName,
             login: item.githubLogin,
             count: item.totalRepositories
         })
     });
-    summary.topProfilesByRepositoryCreation.map(item => {
+    summary.topProfilesByRepositoryCreation.forEach(item => {
         topProfilesByRepositoryCreation.push({
             name: item.fullName,
             login: item.githubLogin,
             count: item.totalRepositoryContributionsWeekly
         })
     });
-    summary.topProfilesByStars.map(item => {
+    summary.topProfilesByStars.forEach(item => {
         topProfilesByStars.push({
             name: item.fullName,
             login: item.githubLogin,
