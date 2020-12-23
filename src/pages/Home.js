@@ -3,7 +3,7 @@ import {Col, Row, Spinner, Card} from "react-bootstrap";
 import CounterCard from "../components/cards/CounterCard";
 import WordCloudCard from "../components/cards/WordCloudCard";
 import PieContributionCard from "../components/cards/PieContributionCard";
-import ContributorTable from "../components/cards/ContributorTable";
+import ContributorTable from "../components/tables/ContributorTable";
 import RepositoriesCard from "../components/cards/RepositoriesCard";
 import HomeData from "../data/HomeData";
 import GetToken from "../data/GetToken";
