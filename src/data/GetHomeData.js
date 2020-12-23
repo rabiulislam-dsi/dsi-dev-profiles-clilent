@@ -2,6 +2,8 @@ import axios from 'axios'
 import StatData from "./StatData";
 import WordCloudData from "./WordCloudData";
 import PieContributionData from "./PieContributionData";
+import ContributorTableData from "./ContributorTableData";
+import RepositoryTableData from "./RepositoryTableData";
 
 function GetHomeData(token, callback) {
     const auth = 'Bearer ' + token;
@@ -19,6 +21,8 @@ function GetHomeData(token, callback) {
             const topTopicsData = WordCloudData(summary.topTopicsByRepositoryCount);
             const topOrganizationData = WordCloudData(summary.topOrganizationsByRepositoriesCount);
             const pieContributionData = PieContributionData(summary);
+            const contributorTableData = ContributorTableData(summary);
+            const repositoryTableData = RepositoryTableData(summary.topRepositoriesByStars);
         })
         .catch(error => {
             console.error(error);
