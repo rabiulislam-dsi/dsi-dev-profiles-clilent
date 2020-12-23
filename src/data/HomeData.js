@@ -275,97 +275,127 @@ const PieContributionData = {
 };
 const ContributorCardData = [
     {
-        title: "Top Commit Contributors",
-        columns: ["#", "Name", "Github", "Commits"],
+        title: "By Commits",
+        columns: ["#", "Name", "Commits"],
         rows: [
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             }
         ]
     },
     {
-        title: "Top Pull Request Contributors",
-        columns: ["#", "Name", "Github", "Pull Requests"],
+        title: "By Pull Requests",
+        columns: ["#", "Name", "Pull Requests"],
         rows: [
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             }
         ]
     },
     {
-        title: "Top Issue Contributors",
-        columns: ["#", "Name", "Github", "Issues"],
+        title: "By Issues",
+        columns: ["#", "Name", "Issues"],
         rows: [
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             }
         ]
     },
     {
-        title: "Top Repository Contributors",
-        columns: ["#", "Name", "Github", "Repositories"],
+        title: "By Repository Count",
+        columns: ["#", "Name", "Repositories"],
         rows: [
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
                 count: 150
             },
             {
                 name: "Yeasir Afsar",
                 login: "Death-Gear",
-                url: "https://github.com/Death-Gear",
+                count: 150
+            }
+        ]
+    },
+    {
+        title: "By Repository Creation",
+        columns: ["#", "Name", "Repositories"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                count: 150
+            }
+        ]
+    },
+    {
+        title: "By Stars",
+        columns: ["#", "Name", "Stars"],
+        rows: [
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
+                count: 150
+            },
+            {
+                name: "Yeasir Afsar",
+                login: "Death-Gear",
                 count: 150
             }
         ]
@@ -373,42 +403,37 @@ const ContributorCardData = [
 ];
 const RepositoryCardData = {
     title: "Top Repositories",
-    columns: ["#", "Name", "Stars", "Forks", "Contributors"],
+    columns: ["#", "Name", "Stars", "Forks"],
     rows: [
         {
             name: "flask-image-search",
             url: "https://github.com/Death-Gear/flask-image-search",
             stars: 10,
-            forks: 6,
-            contributors: 20
+            forks: 6
         },
         {
             name: "flask-image-search",
             url: "https://github.com/Death-Gear/flask-image-search",
             stars: 10,
-            forks: 6,
-            contributors: 20
+            forks: 6
         },
         {
             name: "flask-image-search",
             url: "https://github.com/Death-Gear/flask-image-search",
             stars: 10,
-            forks: 6,
-            contributors: 20
+            forks: 6
         },
         {
             name: "flask-image-search",
             url: "https://github.com/Death-Gear/flask-image-search",
             stars: 10,
-            forks: 6,
-            contributors: 20
+            forks: 6
         },
         {
             name: "flask-image-search",
             url: "https://github.com/Death-Gear/flask-image-search",
             stars: 10,
-            forks: 6,
-            contributors: 20
+            forks: 6
         }
     ]
 

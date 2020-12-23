@@ -37,7 +37,7 @@ $navbar-padding-x: 2rem;
 }
 ::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background: map-get($theme-colors, "secondary");
+        background: map-get($theme-colors, "brand");
         height: 3px;
 }
 ::-webkit-scrollbar-corner       { display: none; height: 0px; width: 0px; }

@@ -3,14 +3,14 @@ import {Card, Table} from "react-bootstrap";
 
 function RepositoriesCard({repositoryCardData}) {
     return (
-        <Card className="shadow py-2 border-0 repositories-card">
+        <Card className="border-0 shadow repositories-card">
+            <Card.Header className="text-secondary text-center">
+                <h2>
+                    {repositoryCardData.title}
+                </h2>
+            </Card.Header>
             <Card.Body>
-                <Card.Title className="text-secondary text-center" style={{marginBottom: "2rem"}}>
-                    <h2>
-                        {repositoryCardData.title}
-                    </h2>
-                </Card.Title>
-                <Table striped bordered hover responsive>
+                <Table bordered hover responsive>
                     <thead>
                     <tr>
                         {repositoryCardData.columns.map((item, index) => {
@@ -30,7 +30,6 @@ function RepositoriesCard({repositoryCardData}) {
                                 </td>
                                 <td>{item.stars}</td>
                                 <td>{item.forks}</td>
-                                <td>{item.contributors}</td>
                             </tr>
                         )
                     })}

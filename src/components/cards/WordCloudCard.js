@@ -3,6 +3,7 @@ import {Card} from "react-bootstrap";
 import ReactWordcloud from "react-wordcloud";
 import 'tippy.js/dist/tippy.css';
 import "tippy.js/animations/scale.css";
+import CountUp from "react-countup";
 
 const options = {
     colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
@@ -18,7 +19,7 @@ const options = {
     spiral: "archimedean",
     transitionDuration: 1000
 };
-function WordCloudCard({wordCloudData, title}) {
+function WordCloudCard({wordCloudData, title, subtitle}) {
     return (
         <Card className="shadow py-2 border-0 word-cloud-card">
             <Card.Body>
@@ -27,6 +28,11 @@ function WordCloudCard({wordCloudData, title}) {
                         {title}
                     </h2>
                 </Card.Title>
+                <Card.Subtitle className="text-secondary text-center">
+                    <h5>
+                        {subtitle}
+                    </h5>
+                </Card.Subtitle>
                 <ReactWordcloud words={wordCloudData} options={options}/>
             </Card.Body>
         </Card>
