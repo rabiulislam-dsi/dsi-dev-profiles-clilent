@@ -3,7 +3,7 @@ import {Button} from "react-bootstrap";
 
 function GoogleLogin() {
     return ( 
-        <div class="container">
+        <div className="container">
             <div className="page-center">
                 <div className="col-10 d-flex justify-content-center align-items-center">
                     <div>

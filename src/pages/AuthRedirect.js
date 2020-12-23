@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
-import {extractAuthResponseFromHash} from '../../utils/authUtils';
-import GithubLogin from '../auth/GithubLogin';
+import {extractAuthResponseFromHash} from '../utils/authUtils';
+import GithubLogin from '../components/auth/GithubLogin';
 
 const params = (new URL(document.location)).searchParams;
 const code = params.get("code");
@@ -30,7 +30,7 @@ function AuthRedirect() {
         }).
         then(res=>{
             setLoading(false);
-            if(res.data.hd!="dsinnovators.com"){
+            if(res.data.hd!=="dsinnovators.com"){
                 setError("Please login with your official email address");
             }
             setSuccess("We are almost done. Now, please login with github");
@@ -42,6 +42,7 @@ function AuthRedirect() {
     }
 
     const handleGithubAuthCallback =()=>{
+        //TODO:// get dev info and send those to backend along with auth code
         // axios.post('/demo', {
         //     code: code
         // }).
@@ -53,7 +54,6 @@ function AuthRedirect() {
         //     setLoading(false);
         //     setError("Authorization failed");
         // });
-        console.log('ok');
     }
 
     const NextContent=()=>{

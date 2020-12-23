@@ -1,13 +1,12 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Home from './components/pages/Home';
-import AuthRedirect from './components/pages/AuthRedirect';
-import Contributors from "./components/pages/Contributors";
-import Repositories from "./components/pages/Repositories";
-import Contributions from "./components/pages/Contributions";
-import Settings from "./components/pages/Settings";
-import GoogleLogin from "./components/pages/GoogleLogin";
-import ContainerWithNav from "./components/layout/ContainerWithNav";
-import Container from "react-bootstrap/cjs/Container";
+import Home from './pages/Home';
+import AuthRedirect from './pages/AuthRedirect';
+import Contributors from "./pages/Contributors";
+import Repositories from "./pages/Repositories";
+import Contributions from "./pages/Contributions";
+import Settings from "./pages/Settings";
+import GoogleLogin from "./components/auth/GoogleLogin";
+import ContainerWithNav from "./layout/ContainerWithNav";
 
 function App() {
     return (
