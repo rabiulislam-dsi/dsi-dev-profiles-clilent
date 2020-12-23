@@ -72,7 +72,7 @@ function Home() {
                         <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Topics'} subtitle={'By Repository Count'} />
                     </Col>
                     <Col xl={4} lg={6} className="mb-4">
-                        <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Organizations'} subtitle={'By Repository Count'} />
+                        <WordCloudCard wordCloudData={homeData.TopOrganizationData} title={'Top Organizations'} subtitle={'By Repository Count'} />
                     </Col>
                 </Row>
             </>
