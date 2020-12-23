@@ -4,15 +4,15 @@ import SideBar from "./SideBar";
 
 import "./Layout.scss";
 
-function NavWrapper() {
+function NavWrapper(props) {
     const [sidebar, setSidebar] = useState(false);
     const toggleSideBar = () => setSidebar(!sidebar);
-    return(
+    return props.renderNav===true?(
         <div id="NavWrapper" className={sidebar ? 'toggled' : ''}>
             <NavBar toggleSideBar={toggleSideBar}/>
             <SideBar toggleSideBar={toggleSideBar}/>
         </div>
-    )
+    ):null
 }
 
 export default NavWrapper;
