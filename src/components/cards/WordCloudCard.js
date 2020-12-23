@@ -18,7 +18,7 @@ const options = {
     spiral: "archimedean",
     transitionDuration: 1000
 };
-function WordCloudCard({wordCloudData, title}) {
+function WordCloudCard({wordCloudData, title, subtitle}) {
     return (
         <Card className="shadow py-2 border-0 word-cloud-card">
             <Card.Body>
@@ -27,6 +27,11 @@ function WordCloudCard({wordCloudData, title}) {
                         {title}
                     </h2>
                 </Card.Title>
+                <Card.Subtitle className="text-secondary text-center">
+                    <h5>
+                        {subtitle}
+                    </h5>
+                </Card.Subtitle>
                 <ReactWordcloud words={wordCloudData} options={options}/>
             </Card.Body>
         </Card>
