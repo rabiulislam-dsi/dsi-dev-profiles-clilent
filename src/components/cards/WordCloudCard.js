@@ -3,7 +3,6 @@ import {Card} from "react-bootstrap";
 import ReactWordcloud from "react-wordcloud";
 import 'tippy.js/dist/tippy.css';
 import "tippy.js/animations/scale.css";
-import CountUp from "react-countup";
 
 const options = {
     colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],

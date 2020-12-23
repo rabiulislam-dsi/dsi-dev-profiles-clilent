@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Col, Row, Spinner, Card, ListGroup, Table} from "react-bootstrap";
+import {Col, Row, Spinner, Card} from "react-bootstrap";
 import CounterCard from "../components/cards/CounterCard";
 import WordCloudCard from "../components/cards/WordCloudCard";
 import PieContributionCard from "../components/cards/PieContributionCard";
