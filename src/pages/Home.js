@@ -40,7 +40,7 @@ function Home() {
                             </Card.Header>
                             <Card.Body>
                                 <Row>
-                                    {homeData.ContributorTableData.map((item, index) => {
+                                    {homeData.ContributorCardData.map((item, index) => {
                                         return (
                                             <Col key={index} lg={4} md={6} className="my-3">
                                                 <ContributorTable contributorCardData={item}/>
@@ -72,7 +72,7 @@ function Home() {
                         <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Topics'} subtitle={'By Repository Count'} />
                     </Col>
                     <Col xl={4} lg={6} className="mb-4">
-                        <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Organizations'} subtitle={'By Repository Count'} />
+                        <WordCloudCard wordCloudData={homeData.TopOrganizationData} title={'Top Organizations'} subtitle={'By Repository Count'} />
                     </Col>
                 </Row>
             </>

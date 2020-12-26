@@ -4,8 +4,8 @@ function RepositoryTableData(topRepositories) {
         topRepositoryData.push({
             name: item.name,
             url: item.url,
-            stars: item.totalStars,
-            forks: item.totalForks
+            stars: item.stars,
+            forks: item.forks
         })
     });
     return {
