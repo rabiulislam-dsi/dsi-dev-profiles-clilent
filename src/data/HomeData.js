@@ -443,8 +443,9 @@ const HomeData = {
     StatData: StatData,
     TopLanguageData: TopLanguageData,
     TopTopicsData: TopTopicsData,
+    TopOrganizationData: TopTopicsData,
     PieContributionData: PieContributionData,
-    ContributorTableData: ContributorTableData,
+    ContributorCardData: ContributorTableData,
     RepositoryCardData: RepositoryCardData
 }
 
