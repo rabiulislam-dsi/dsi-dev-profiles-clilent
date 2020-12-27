@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Home from './pages/Home';
 import AuthRedirect from './pages/AuthRedirect';
@@ -8,6 +8,7 @@ import Contributions from "./pages/Contributions";
 import Settings from "./pages/Settings";
 import GoogleLogin from "./components/auth/GoogleLogin";
 import Layout from "./layout/Layout";
+import Error from "./pages/Error";
 import {UserContext} from "./context/UserContext";
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
                             <Route path="/repositories" component={Repositories}/>
                             <Route path="/contributions" component={Contributions}/>
                             <Route path="/settings" component={Settings}/>
-                            <Route component={() => (<p>Not Found</p>)}/>
+                            <Route path="/error" component={Error}/>
+                            <Redirect exact from="*" to="/error" />
                         </Layout>
                     </UserContext.Provider>
                 </Switch>

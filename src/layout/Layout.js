@@ -3,9 +3,12 @@ import NavWrapper from "./NavWrapper";
 import Container from "react-bootstrap/cjs/Container";
 import {Switch, useLocation} from "react-router-dom";
 
+import "../styles/Layout.scss";
+
 function Layout(props){
+    const defaultLayoutPath = ['auth', 'error'];
     let location = useLocation();
-    const renderNav=!location.pathname.split('/').includes('auth');
+    const renderNav=!defaultLayoutPath.some(string => location.pathname.split('/').includes(string));
     return (
         <React.Fragment>
             <NavWrapper renderNav={renderNav}/>
