@@ -12,6 +12,7 @@ import Error from "./pages/Error";
 import {UserContext} from "./context/UserContext";
 
 function App() {
+    // TODO: Move this state to UserContext
     const [user, setUser] = useState({
         token: null,
         info: {
