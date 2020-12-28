@@ -1,6 +1,6 @@
 function WordCloudData(data) {
     const topLanguageData = [];
-    data.map((item) => {
+    data.forEach((item) => {
         topLanguageData.push({
             text: item.name,
             value: item.count

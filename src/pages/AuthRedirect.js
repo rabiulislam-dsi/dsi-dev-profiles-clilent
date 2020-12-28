@@ -10,38 +10,38 @@ const {access_token} = extractAuthResponseFromHash(document.location.hash);
 
 function AuthRedirect() {
     const {authServer} = useParams();
-    const [success,setSuccess] = useState(null);
-    const [err,setError] = useState(null);
-    const [loading,setLoading] = useState(true);
-    
+    const [success, setSuccess] = useState(null);
+    const [err, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        if(authServer==="google"){
+        if (authServer === "google") {
             handleGoogleAuthCallback();
-        }else{
+        } else {
             handleGithubAuthCallback();
         }
     }, []);
 
-    const handleGoogleAuthCallback =()=>{
+    const handleGoogleAuthCallback = () => {
         axios.get('https://www.googleapis.com/oauth2/v1/userinfo', {
             params: {
-                access_token:access_token
+                access_token: access_token
             }
-        }).
-        then(res=>{
-            setLoading(false);
-            if(res.data.hd!=="dsinnovators.com"){
-                setError("Please login with your official email address");
-            }
-            setSuccess("We are almost done. Now, please login with github");
         })
-        .catch(err=>{
-            setLoading(false);
-            setError("Authorization failed");
-        });
+            .then(res => {
+                setLoading(false);
+                if (res.data.hd !== "dsinnovators.com") {
+                    setError("Please login with your official email address");
+                }
+                setSuccess("We are almost done. Now, please login with github");
+            })
+            .catch(err => {
+                setLoading(false);
+                setError("Authorization failed");
+            });
     }
 
-    const handleGithubAuthCallback =()=>{
+    const handleGithubAuthCallback = () => {
         //TODO:// get dev info and send those to backend along with auth code
         // axios.post('/demo', {
         //     code: code
@@ -56,8 +56,8 @@ function AuthRedirect() {
         // });
     }
 
-    const NextContent=()=>{
-        if(authServer==="google"){
+    const NextContent = () => {
+        if (authServer === "google") {
             return <GithubLogin/>
         }
         return <a href="/">Home</a>
@@ -74,5 +74,5 @@ function AuthRedirect() {
         </div>
     );
 }
-  
+
 export default AuthRedirect;

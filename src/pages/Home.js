@@ -16,7 +16,7 @@ function Home() {
     const getHomeData = token => {
         GetHomeData(token, setHomeData);
     }
-    if(homeData !== undefined) {
+    if (homeData !== undefined) {
         return (
             <>
                 <Row className="mt-3">
@@ -24,7 +24,7 @@ function Home() {
                         homeData.StatData.map((item, index) => {
                             return (
                                 <Col key={index} xl={3} sm={6} className="mb-4">
-                                    <CounterCard data={item} />
+                                    <CounterCard data={item}/>
                                 </Col>
                             )
                         })
@@ -54,7 +54,7 @@ function Home() {
                 </Row>
                 <Row>
                     <Col xl={6} className="mb-4">
-                        <RepositoriesCard repositoryCardData={homeData.RepositoryCardData} />
+                        <RepositoriesCard repositoryCardData={homeData.RepositoryCardData}/>
                     </Col>
                     <Col xl={6} className="mb-4">
                         <PieContributionCard
@@ -66,13 +66,16 @@ function Home() {
                 </Row>
                 <Row>
                     <Col xl={4} lg={6} className="mb-4">
-                        <WordCloudCard wordCloudData={homeData.TopLanguageData} title={'Top Languages'} subtitle={'By Repository Count'} />
+                        <WordCloudCard wordCloudData={homeData.TopLanguageData} title={'Top Languages'}
+                                       subtitle={'By Repository Count'}/>
                     </Col>
                     <Col xl={4} lg={6} className="mb-4">
-                        <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Topics'} subtitle={'By Repository Count'} />
+                        <WordCloudCard wordCloudData={homeData.TopTopicsData} title={'Top Topics'}
+                                       subtitle={'By Repository Count'}/>
                     </Col>
                     <Col xl={4} lg={6} className="mb-4">
-                        <WordCloudCard wordCloudData={homeData.TopOrganizationData} title={'Top Organizations'} subtitle={'By Repository Count'} />
+                        <WordCloudCard wordCloudData={homeData.TopOrganizationData} title={'Top Organizations'}
+                                       subtitle={'By Repository Count'}/>
                     </Col>
                 </Row>
             </>
@@ -80,7 +83,7 @@ function Home() {
     } else {
         return (
             <>
-                <Spinner animation="border" variant="primary" />
+                <Spinner animation="border" variant="primary"/>
             </>
         )
     }
