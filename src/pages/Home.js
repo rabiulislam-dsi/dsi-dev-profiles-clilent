@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Col, Row, Spinner, Card} from "react-bootstrap";
 import CounterCard from "../components/cards/CounterCard";
 import WordCloudCard from "../components/cards/WordCloudCard";
@@ -7,13 +7,23 @@ import ContributorTable from "../components/tables/ContributorTable";
 import RepositoriesCard from "../components/cards/RepositoriesCard";
 import GetToken from "../data/GetToken";
 import GetHomeData from "../data/GetHomeData";
+import {UserContext} from "../context/UserContext";
 
 function Home() {
+    const {user, setUser} = useContext(UserContext);
     const [homeData, setHomeData] = useState(undefined);
     useEffect(() => {
-        GetToken(getHomeData);
+        if(user.token == null) {
+            GetToken(getHomeData);
+        } else {
+            GetHomeData(user.token, setHomeData);
+        }
     }, []);
     const getHomeData = token => {
+        setUser({
+            token: token,
+            info: user.info
+        })
         GetHomeData(token, setHomeData);
     }
     if (homeData !== undefined) {

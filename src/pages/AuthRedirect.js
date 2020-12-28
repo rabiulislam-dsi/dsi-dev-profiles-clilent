@@ -1,14 +1,16 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import {extractAuthResponseFromHash} from '../utils/authUtils';
 import GithubLogin from '../components/auth/GithubLogin';
+import {UserContext} from "../context/UserContext";
 
 const params = (new URL(document.location)).searchParams;
 const code = params.get("code");
 const {access_token} = extractAuthResponseFromHash(document.location.hash);
 
 function AuthRedirect() {
+    const {user, setUser} = useContext(UserContext);
     const {authServer} = useParams();
     const [success, setSuccess] = useState(null);
     const [err, setError] = useState(null);
@@ -32,6 +34,14 @@ function AuthRedirect() {
                 setLoading(false);
                 if (res.data.hd !== "dsinnovators.com") {
                     setError("Please login with your official email address");
+                } else {
+                    setUser({
+                        token: user.token,
+                        info: {
+                            name: res.data.name,
+                            email: res.data.email
+                        }
+                    })
                 }
                 setSuccess("We are almost done. Now, please login with github");
             })
