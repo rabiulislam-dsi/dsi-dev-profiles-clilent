@@ -20,5 +20,19 @@ $theme-colors: (
 
 $navbar-padding-x: 2rem;
 
+@import "react-datepicker/dist/react-datepicker.css";
 /* import bootstrap to set changes */
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.datePicker {
+  width: 100%;
+  display: block !important;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+.form-error-custrom{
+  font-size: 0.8em;
+}

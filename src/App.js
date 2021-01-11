@@ -9,25 +9,18 @@ import Settings from "./pages/Settings";
 import GoogleLogin from "./components/auth/GoogleLogin";
 import Layout from "./layout/Layout";
 import Error from "./pages/Error";
-import {UserContext} from "./context/UserContext";
+import {UserProvider} from "./context/UserContext";
 
 function App() {
-    // TODO: Move this state to UserContext
-    const [user, setUser] = useState({
-        token: null,
-        info: {
-            name: 'Guest',
-            email: null
-        }
-    });
     return (
-        <Router>
-            <div id="wrapper">
-                <Switch>
-                    <UserContext.Provider value={{user, setUser}}>
+        
+            <Router>
+                <div id="wrapper">
+                    <Switch>
+                    <UserProvider>
                         <Layout>
                             <Redirect exact from="/" to="/home"/>
-                            <Route path="/auth/signup" component={GoogleLogin}/>
+                            <Route path="/user/signup" component={GoogleLogin}/>
                             <Route path="/auth/:authServer/callback" component={AuthRedirect}/>
                             <Route path="/home" exact component={Home}/>
                             <Route path="/contributors" component={Contributors}/>
@@ -37,10 +30,11 @@ function App() {
                             <Route path="/error" component={Error}/>
                             <Redirect exact from="*" to="/error" />
                         </Layout>
-                    </UserContext.Provider>
-                </Switch>
-            </div>
-        </Router>
+                        </UserProvider>
+                    </Switch>
+                </div>
+            </Router>
+        
     );
 }
 
