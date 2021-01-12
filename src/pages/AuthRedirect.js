@@ -35,10 +35,11 @@ function AuthRedirect() {
                 if (res.data.hd !== "dsinnovators.com") {
                     setError("Please login with your official email address");
                 } else {
-                    const newUser = {...user,info: {
+                    const newUser = {
+                        ...user,
                         name: res.data.name,
                         email: res.data.email
-                    }};
+                    };
                     setUser(newUser);
                     localStorage.setItem('user',JSON.stringify(newUser));
                 }
@@ -51,18 +52,26 @@ function AuthRedirect() {
     }
 
     const handleGithubAuthCallback = () => {
-        //TODO:// get dev info and send those to backend along with auth code
-        // axios.post('/demo', {
-        //     code: code
-        // }).
-        // then(res=>{
-        //     setLoading(false);
-        //     setSuccess("Sign up complete. Go to home page");
-        // })
-        // .catch(err=>{
-        //     setLoading(false);
-        //     setError("Authorization failed");
-        // });
+        const user = JSON.parse(localStorage.getItem('user'));
+        setUser(user);
+        const url = "/api/developers/" + user.id + "/github/code";
+        axios({
+            method: 'post',
+            url: url,
+            data: {
+                code: code
+            }
+        })
+            .then((response) => {
+                console.log(response);
+                setLoading(false);
+                setSuccess("Sign up complete. Go to home page");
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false);
+                setError("Authorization failed");
+            });
     }
 
     const NextContent = () => {

@@ -6,7 +6,7 @@ import {Switch, useLocation} from "react-router-dom";
 import "../styles/Layout.scss";
 
 function Layout(props){
-    const defaultLayoutPath = ['auth', 'error'];
+    const defaultLayoutPath = ['user', 'error', 'auth'];
     let location = useLocation();
     const renderNav=!defaultLayoutPath.some(string => location.pathname.split('/').includes(string));
     return (

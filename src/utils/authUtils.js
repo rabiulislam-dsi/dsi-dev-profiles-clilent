@@ -16,8 +16,9 @@ export function googleOauthSignIn() {
         'client_id': REACT_APP_GOOGLE_AUTH_CLIENT_ID,
         'redirect_uri': REACT_APP_GOOGLE_AUTH_REDIRECT_URI,
         'response_type': 'token',
-        'scope': 'https://www.googleapis.com/auth/userinfo.profile',
-        'include_granted_scopes': 'true'
+        'scope': 'openid profile email',
+        'include_granted_scopes': 'true',
+        'hd': 'dsinnovators.com'
     };
   
     // Add form parameters as hidden input values.
