@@ -35,13 +35,12 @@ function AuthRedirect() {
                 if (res.data.hd !== "dsinnovators.com") {
                     setError("Please login with your official email address");
                 } else {
-                    setUser({
-                        token: user.token,
-                        info: {
-                            name: res.data.name,
-                            email: res.data.email
-                        }
-                    })
+                    const newUser = {...user,info: {
+                        name: res.data.name,
+                        email: res.data.email
+                    }};
+                    setUser(newUser);
+                    localStorage.setItem('user',JSON.stringify(newUser));
                 }
                 setSuccess("We are almost done. Now, please login with github");
             })
