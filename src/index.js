@@ -6,10 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 // Importing Sass with Bootstrap CSS
 import './App.scss';
+import {UserProvider} from "./context/UserContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <UserProvider>
+          <App />
+      </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

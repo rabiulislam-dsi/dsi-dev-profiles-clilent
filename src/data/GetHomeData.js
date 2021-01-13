@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './axios/Axios'
 import StatData from "./StatData";
 import WordCloudData from "./WordCloudData";
 import PieContributionData from "./PieContributionData";
@@ -6,14 +6,10 @@ import ContributorTableData from "./ContributorTableData";
 import RepositoryTableData from "./RepositoryTableData";
 import HomeData from "./HomeData";
 
-function GetHomeData(token, callback) {
-    const auth = 'Bearer ' + token;
+function GetHomeData(callback) {
     axios({
         method: 'get',
-        url: '/api/summaries',
-        headers: {
-            'Authorization' : auth
-        }
+        url: '/api/summaries'
     })
         .then((response) => {
             const summary = response.data.summary;

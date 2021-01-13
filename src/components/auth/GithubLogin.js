@@ -1,9 +1,9 @@
 import {useState,useContext, useEffect} from 'react';
 import {UserContext} from "../../context/UserContext";
 import {Button,Form} from "react-bootstrap";
-import {date,object,string} from 'yup';
-import { parse, isDate } from "date-fns";
+import {date,string} from 'yup';
 import DatePicker from "react-datepicker";
+import CreateDeveloper from "../../data/CreateDeveloper";
 
 const {
     REACT_APP_GITHUB_AUTH_CLIENT_ID,
@@ -11,7 +11,7 @@ const {
   } = process.env;
 
 const scopes = [
-    "read:user","repo:status"
+    "read:user","repo:status","read:org"
 ];
 
 const githubAuthUrl = 'https://github.com/login/oauth/authorize';
@@ -57,19 +57,27 @@ function GithubLogin() {
             setFormErrors(errors);
         }
         else{
-            const newInfo = {
-                ...user.info,
-                designation,
-                joiningDate
+            const newUser = {
+                ...user,
+                designation: designation,
+                joiningDate: joiningDate
             };
-            const newUser = {...user,info:newInfo};
-            localStorage.setItem('user',JSON.stringify(newUser));
             //create new user in dsi-backend
+            CreateDeveloper(newUser, setDeveloperId)
 
             // redirect to github login
             window.location.assign(`${githubAuthUrl}?client_id=${REACT_APP_GITHUB_AUTH_CLIENT_ID}&
             redirect_uri=${REACT_APP_GITHUB_AUTH_REDIRECT_URI}&scope=${scopes.join("%20")}`);
         }
+    }
+
+    const setDeveloperId = (id, user) => {
+        const newUser = {
+            ...user,
+            id: id
+        }
+        setUser(newUser)
+        localStorage.setItem('user',JSON.stringify(newUser));
     }
 
     //TODO:// Fix the styling and layout later
