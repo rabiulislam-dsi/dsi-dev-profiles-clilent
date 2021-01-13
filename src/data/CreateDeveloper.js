@@ -12,7 +12,6 @@ function CreateDeveloper(user, callback) {
         }
     })
         .then((response) => {
-            console.log(response.data.developer);
             callback(response.data.developer.id, user)
         })
         .catch(error => {
