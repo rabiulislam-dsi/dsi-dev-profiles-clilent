@@ -1,9 +1,10 @@
-import {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import {extractAuthResponseFromHash} from '../utils/authUtils';
 import GithubLogin from '../components/auth/GithubLogin';
 import {UserContext} from "../context/UserContext";
+import {Spinner} from "react-bootstrap";
 
 const params = (new URL(document.location)).searchParams;
 const code = params.get("code");
@@ -74,20 +75,28 @@ function AuthRedirect() {
             });
     }
 
-    const NextContent = () => {
-        if (authServer === "google") {
-            return <GithubLogin/>
+    const NextContent = ({success, error}) => {
+        if(error !== null) return {error}
+        else {
+            if (authServer === "google") {
+                return <GithubLogin message={success}/>
+            }
+            return (
+                <div>
+                    <span>{success}</span>
+                    <a href="/">Home</a>
+                </div>
+            )
         }
-        return <a href="/">Home</a>
     }
 
     return (
         <div className="container">
             <div className="page-center">
-                {loading && (<p>Please wait..</p>)}
-                {!loading && err}
-                {!loading && success}
-                {!loading && !err && <NextContent/>}
+                {loading && (<>
+                    <Spinner animation="border" variant="primary"/>
+                </>)}
+                {!loading && <NextContent success={success} error={err}/>}
             </div>
         </div>
     );

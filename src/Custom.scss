@@ -1,29 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 /* make the customizations */
-$font-family-sans-serif:
-        Nunito,
-          // Safari for OS X and iOS (San Francisco)
-        -apple-system,
-          // Chrome < 56 for OS X (San Francisco)
-        BlinkMacSystemFont,
-          // Windows
-        "Segoe UI",
-          // Android
-        "Roboto",
-          // Basic web fallback
-        "Helvetica Neue", Arial, sans-serif,
-          // Emoji fonts
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif: Nunito,
+  // Safari for OS X and iOS (San Francisco)
+-apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+BlinkMacSystemFont,
+  // Windows
+"Segoe UI",
+  // Android
+"Roboto",
+  // Basic web fallback
+"Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $theme-colors: (
-      "brand": #293880
+        "brand": #293880,
+        "theme": #6c63ff
 );
 
 $navbar-padding-x: 2rem;
+$datepicker__selected-color: map-get($theme-colors, "theme");
+$datepicker__background-color: map-get($theme-colors, "theme");
+$datepicker__header-color: white;
+$datepicker__font-family: $font-family-sans-serif;
 
-@import "react-datepicker/dist/react-datepicker.css";
+@import "../node_modules/react-datepicker/src/stylesheets/datepicker.scss";
 /* import bootstrap to set changes */
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.react-datepicker__day-name {
+  color: white;
+}
+.react-datepicker__year-select, .react-datepicker__month-select {
+  border-radius: 0.3rem;
+}
+.react-datepicker__month-read-view--selected-month, .react-datepicker__year-read-view--selected-year,
+.react-datepicker__year-dropdown, .react-datepicker__month-dropdown{
+  color: white;
+}
+.react-datepicker__year-option,
+.react-datepicker__month-option,
+.react-datepicker__month-year-option {
+  &:hover {
+    background-color: #4741bf;
+  }
+}
 .datePicker {
   width: 100%;
   display: block !important;
@@ -33,6 +54,6 @@ $navbar-padding-x: 2rem;
   width: 100%;
 }
 
-.form-error-custrom{
+.form-error-custom {
   font-size: 0.8em;
 }
