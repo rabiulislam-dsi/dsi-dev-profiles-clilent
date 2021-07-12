@@ -5,6 +5,7 @@ import {extractAuthResponseFromHash} from '../utils/authUtils';
 import GithubLogin from '../components/auth/GithubLogin';
 import {UserContext} from "../context/UserContext";
 import {Spinner} from "react-bootstrap";
+import RegistrationSuccess from "../components/auth/RegistrationSuccess";
 
 const params = (new URL(document.location)).searchParams;
 const code = params.get("code");
@@ -66,7 +67,7 @@ function AuthRedirect() {
             .then((response) => {
                 console.log(response);
                 setLoading(false);
-                setSuccess("Sign up complete. Go to home page");
+                setSuccess("Registration Successful");
             })
             .catch(err => {
                 console.log(err);
@@ -81,12 +82,7 @@ function AuthRedirect() {
             if (authServer === "google") {
                 return <GithubLogin message={success}/>
             }
-            return (
-                <div>
-                    <span>{success}</span>
-                    <a href="/">Home</a>
-                </div>
-            )
+            return <RegistrationSuccess message={success}/>
         }
     }
 
