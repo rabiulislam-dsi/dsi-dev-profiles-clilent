@@ -65,12 +65,9 @@ function GithubLogin({message}) {
                 designation: designation,
                 joiningDate: joiningDate
             };
-            //create new user in dsi-backend
-            CreateDeveloper(newUser, setDeveloperId)
 
-            // redirect to github login
-            window.location.assign(`${githubAuthUrl}?client_id=${REACT_APP_GITHUB_AUTH_CLIENT_ID}&
-            redirect_uri=${REACT_APP_GITHUB_AUTH_REDIRECT_URI}&scope=${scopes.join("%20")}`);
+            //create new user in dsi-backend
+            CreateDeveloper(newUser, setDeveloperId, authRedirect);
         }
     }
 
@@ -81,6 +78,12 @@ function GithubLogin({message}) {
         }
         setUser(newUser)
         localStorage.setItem('user', JSON.stringify(newUser));
+    }
+
+    const authRedirect = () => {
+        // redirect to github login
+        window.location.assign(`${githubAuthUrl}?client_id=${REACT_APP_GITHUB_AUTH_CLIENT_ID}&
+        redirect_uri=${REACT_APP_GITHUB_AUTH_REDIRECT_URI}&scope=${scopes.join("%20")}`);
     }
 
     //TODO:// Fix the styling and layout later

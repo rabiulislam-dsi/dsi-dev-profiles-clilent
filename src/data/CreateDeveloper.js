@@ -1,6 +1,6 @@
 import axios from './axios/Axios';
 
-function CreateDeveloper(user, callback) {
+function CreateDeveloper(user, callback, redirect) {
     axios({
         method: 'post',
         url: '/api/developers',
@@ -12,7 +12,10 @@ function CreateDeveloper(user, callback) {
         }
     })
         .then((response) => {
-            callback(response.data.developer.id, user)
+            callback(response.data.developer.id, user);
+        })
+        .then(() => {
+            redirect();
         })
         .catch(error => {
             console.log(error);
