@@ -4,7 +4,7 @@ import WordCloudData from "./WordCloudData";
 import PieContributionData from "./PieContributionData";
 import ContributorTableData from "./ContributorTableData";
 import RepositoryTableData from "./RepositoryTableData";
-import HomeData from "./HomeData";
+import {errorHandler} from "../utils/errorUtils";
 
 function GetHomeData(callback) {
     axios({
@@ -32,8 +32,7 @@ function GetHomeData(callback) {
             callback(homeData);
         })
         .catch(error => {
-            console.error(error);
-            callback(HomeData);
+            errorHandler(error);
         })
 }
 
