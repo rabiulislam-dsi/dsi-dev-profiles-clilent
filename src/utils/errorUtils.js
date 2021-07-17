@@ -16,7 +16,7 @@ export function getMessage(code) {
     return errorMap.get(code);
 }
 
-export function errorHandler(error) {
+export function axiosErrorHandler(error) {
     console.error(error);
     if(error.response) {
         let status = error.response.status;
