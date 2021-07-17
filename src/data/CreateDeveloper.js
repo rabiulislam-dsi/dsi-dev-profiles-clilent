@@ -1,4 +1,5 @@
 import axios from './axios/Axios';
+import {axiosErrorHandler} from "../utils/errorUtils";
 
 function CreateDeveloper(user, callback, redirect) {
     axios({
@@ -18,7 +19,7 @@ function CreateDeveloper(user, callback, redirect) {
             redirect();
         })
         .catch(error => {
-            console.log(error);
+            axiosErrorHandler(error);
         })
 }
 

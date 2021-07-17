@@ -24,7 +24,7 @@ function App() {
                         <Route path="/repositories" component={Repositories}/>
                         <Route path="/contributions" component={Contributions}/>
                         <Route path="/settings" component={Settings}/>
-                        <Route path="/error" component={Error}/>
+                        <Route path="/error/:code?" component={Error}/>
                         <Redirect exact from="*" to="/error"/>
                     </Layout>
                 </Switch>
